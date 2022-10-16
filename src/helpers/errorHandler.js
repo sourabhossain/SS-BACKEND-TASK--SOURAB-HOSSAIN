@@ -21,4 +21,13 @@ const internalServerError = (error, req, res, next) => {
 	res.end();
 };
 
-module.exports = { notFound, internalServerError };
+// handle http errors response
+const errorHttpResponse = (error) => {
+	if ("errors" in error) {
+		return error.errors;
+	}
+
+	return error;
+};
+
+module.exports = { notFound, internalServerError, errorHttpResponse };
