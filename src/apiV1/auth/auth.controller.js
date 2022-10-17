@@ -6,26 +6,14 @@ const signUp = async (req, res) => {
 	return new Auth()
 		.signUp(req)
 		.then((data) => {
-			if (data) {
-				const { message, code } = responseConstant.AUTH.LOGIN_SUCCEEDED;
+			const { message, code } = responseConstant.AUTH.LOGIN_SUCCEEDED;
 
-				res.status(200).send({
-					success: true,
-					message,
-					code,
-					data,
-				});
-			} else {
-				const { message, code } =
-					responseConstant.USER.REFERENCE_NOT_FOUND;
-
-				res.status(404).send({
-					success: false,
-					message,
-					code,
-					error: message,
-				});
-			}
+			res.status(200).send({
+				success: true,
+				message,
+				code,
+				data,
+			});
 		})
 		.catch((errors) => {
 			const { message, code } = responseConstant.AUTH.LOGIN_FAILED;
@@ -43,26 +31,14 @@ const signIn = async (req, res) => {
 	return new Auth()
 		.signIn(req)
 		.then((data) => {
-			if (data) {
-				const { message, code } = responseConstant.AUTH.LOGIN_SUCCEEDED;
+			const { message, code } = responseConstant.AUTH.LOGIN_SUCCEEDED;
 
-				res.status(200).send({
-					success: true,
-					message,
-					code,
-					data,
-				});
-			} else {
-				const { message, code } =
-					responseConstant.ADMIN.REFERENCE_NOT_FOUND;
-
-				res.status(404).send({
-					success: false,
-					message,
-					code,
-					error: message,
-				});
-			}
+			res.status(200).send({
+				success: true,
+				message,
+				code,
+				data,
+			});
 		})
 		.catch((errors) => {
 			const { message, code } = responseConstant.AUTH.REGISTRATION_FAILED;

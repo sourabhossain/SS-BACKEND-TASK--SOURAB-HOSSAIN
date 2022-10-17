@@ -1,24 +1,27 @@
 const httpStatus = require("http-status");
+const responseConstant = require("./../constants/response.constant");
 
 // handle not found errors
 const notFound = (req, res, next) => {
-	res.status(httpStatus.NOT_FOUND);
-	res.json({
+	const { message, code } = responseConstant.COMMON.API_NOTFOUND;
+
+	res.status(httpStatus.NOT_FOUND).send({
 		success: false,
-		message: "Requested Resource Not Found",
+		message,
+		code,
 	});
-	res.end();
 };
 
 // handle internal server errors
 const internalServerError = (error, req, res, next) => {
-	res.status(error.status || httpStatus.INTERNAL_SERVER_ERROR);
-	res.json({
-		message: error.message,
-		extra: error.extra,
-		errors: error,
+	const { message, code } = responseConstant.COMMON.UNKNOWN_ERROR;
+
+	res.status(error.status || httpStatus.INTERNAL_SERVER_ERROR).send({
+		success: false,
+		message,
+		code,
+		errors: errorHttpResponse(error),
 	});
-	res.end();
 };
 
 // handle http errors response
