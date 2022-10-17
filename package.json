@@ -8,7 +8,7 @@
 		"dotenv": "cp .env.example .env"
 	},
 	"repository": "git@github.com:sourabhossain/SS-BACKEND-TASK--SOURAB-HOSSAIN.git",
-	"author": "Sourab Hossain <sourabhossain.fci@gmail.com>",
+	"author": "Sourab Hossain <sourab.asia@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
 		"bcrypt": "^5.1.0",
