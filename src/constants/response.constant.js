@@ -1,7 +1,7 @@
 const responseConstant = {
 	COMMON: {
 		API_NOTFOUND: {
-			message: "API not found",
+			message: "Requested Resource Not Found",
 			code: "1000",
 		},
 		UNKNOWN_ERROR: {
@@ -10,66 +10,70 @@ const responseConstant = {
 		},
 	},
 	AUTH: {
+		REGISTRATION_SUCCEEDED: {
+			message: "Registration successfully",
+			code: "1100",
+		},
 		REGISTRATION_FAILED: {
 			message: "Registration failed",
-			code: "2000",
-		},
-		LOGIN_SUCCEEDED: {
-			message: "Login Successfully",
 			code: "1101",
 		},
-		LOGIN_FAILED: {
-			message: "Login Failed",
+		LOGIN_SUCCEEDED: {
+			message: "Login successfully",
 			code: "1102",
+		},
+		LOGIN_FAILED: {
+			message: "Login failed",
+			code: "1103",
 		},
 		USERNAME_INVALID: {
 			message: "Username is invalid",
-			code: "1103",
+			code: "1104",
 		},
 		PASSWORD_INVALID: {
 			message: "Password is invalid",
-			code: "1104",
+			code: "1105",
 		},
 		UNAUTHORIZED: {
 			message: "You are not authorized to access this resource",
-			code: "1105",
+			code: "1106",
 		},
 	},
-	USER: {
+	MOVIE_TV_SHOW: {
 		CREATION_SUCCEEDED: {
-			message: "User creation succeeded.",
+			message: "MovieTvShow creation succeeded.",
 			code: "1201",
 		},
 		CREATION_FAIL: {
-			message: "User creation failed.",
+			message: "MovieTvShow creation failed.",
 			code: "1202",
 		},
 		UPDATE_SUCCEEDED: {
-			message: "User update succeeded.",
+			message: "MovieTvShow update succeeded.",
 			code: "1203",
 		},
 		UPDATE_FAIL: {
-			message: "User update failed.",
+			message: "MovieTvShow update failed.",
 			code: "1203",
 		},
 		REFERENCE_NOT_FOUND: {
-			message: "User reference not found.",
+			message: "MovieTvShow reference not found.",
 			code: "1204",
 		},
 		FETCH_SUCCEEDED: {
-			message: "User fetch succeeded.",
+			message: "MovieTvShow fetch succeeded.",
 			code: "1205",
 		},
 		FETCH_FAIL: {
-			message: "User fetch failed.",
+			message: "MovieTvShow fetch failed.",
 			code: "1206",
 		},
 		DELETE_SUCCEEDED: {
-			message: "User delete succeeded.",
+			message: "MovieTvShow delete succeeded.",
 			code: "1207",
 		},
 		DELETE_FAIL: {
-			message: "User delete failed.",
+			message: "MovieTvShow delete failed.",
 			code: "1208",
 		},
 	},

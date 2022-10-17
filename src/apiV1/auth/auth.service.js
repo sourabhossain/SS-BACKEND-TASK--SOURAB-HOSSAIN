@@ -17,7 +17,7 @@ class Auth {
 		const model = await user.getUser({ username });
 
 		if (!model) {
-			const errors = responseConstant.AUTH.LOGIN_FAILED;
+			const errors = responseConstant.AUTH.USERNAME_INVALID;
 			throw errors;
 		}
 
@@ -27,7 +27,7 @@ class Auth {
 		);
 
 		if (!matchPasswords) {
-			const errors = responseConstant.AUTH.LOGIN_FAILED;
+			const errors = responseConstant.AUTH.PASSWORD_INVALID;
 			throw errors;
 		}
 
