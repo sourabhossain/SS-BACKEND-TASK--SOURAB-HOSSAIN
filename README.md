@@ -25,3 +25,9 @@ npm run dotenv
 ```bash
 npm run start
 ```
+
+> #### Postman collection link:
+
+```bash
+https://www.getpostman.com/collections/b4e2a687c2419fee2b03
+```
