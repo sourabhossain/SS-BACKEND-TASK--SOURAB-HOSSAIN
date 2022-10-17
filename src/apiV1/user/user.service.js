@@ -1,4 +1,4 @@
-const user = require("./user.service");
+const user = require("./user.model");
 
 module.exports = class User {
 	createUser(req) {
@@ -17,7 +17,7 @@ module.exports = class User {
 	}
 
 	async getUser(req) {
-		req.params._id = req.params.id;
+		req.params._id = req?.params?.id;
 		delete req.params.id;
 		req.query = { ...req.query, ...req.params };
 		return user.getUser(req.query);

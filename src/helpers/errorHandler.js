@@ -27,6 +27,10 @@ const errorHttpResponse = (error) => {
 		return error.errors;
 	}
 
+	if (error.code === 11_000) {
+		return error.message;
+	}
+
 	return error;
 };
 
