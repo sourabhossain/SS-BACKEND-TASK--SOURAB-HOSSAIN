@@ -31,7 +31,7 @@ const signIn = async (req, res) => {
 	return new Auth()
 		.signIn(req)
 		.then((data) => {
-			const { message, code } = responseConstant.AUTH.LOGIN_SUCCEEDED;
+			const { message, code } = responseConstant.AUTH.REGISTRATION_SUCCEEDED;
 
 			res.status(200).send({
 				success: true,
