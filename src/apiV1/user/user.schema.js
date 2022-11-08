@@ -23,6 +23,16 @@ const userSchema = new Schema(
 			default: false,
 		},
 	},
+	{ 
+		toJSON: { 
+			virtuals: true,
+			transform(doc, ret) {
+				delete ret.password;
+				delete ret.id;
+				return ret;
+			}
+		}
+	},
 	{ timestamps: true, minimize: false }
 );
 

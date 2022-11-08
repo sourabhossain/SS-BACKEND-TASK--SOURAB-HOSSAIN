@@ -32,6 +32,7 @@ class Auth {
 		}
 
 		const token = await this.getToken(username);
+		model._doc.password = undefined;
 
 		return {
 			...model._doc,
