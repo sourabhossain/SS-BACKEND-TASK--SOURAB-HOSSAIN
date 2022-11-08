@@ -1,0 +1,247 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a simple example NodeJS API project to demonstrate Swagger Documentation",
+        "version": "1.0.0",
+        "title": "Tasks API",
+        "contact": {
+            "email": "sourab.seu@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "schemes": [
+        "http"
+    ],
+    "host": "localhost:8010",
+    "basePath": "/v1",
+    "paths": {
+        "/signup": {
+            "post": {
+                "summary": "Login to application",
+                "description": "Login to application",
+                "tags": [
+                    "Auth"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {},
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/SignUp"
+                        }
+                    }
+                ]
+            }
+        },
+        "/signin": {
+            "post": {
+                "summary": "Registration to application",
+                "description": "Registration to application",
+                "tags": [
+                    "Auth"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {},
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/SignIn"
+                        }
+                    }
+                ]
+            }
+        },
+        "/movie_tv_shows": {
+            "post": {
+                "summary": "movie tv show insert",
+                "description": "movie tv show insert",
+                "tags": [
+                    "Movie TV Show"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "security": [{ "bearerAuth": [] }],
+                "responses": {},
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/MovieTvShow"
+                        }
+                    }
+                ]
+            },
+            "get": {
+                "summary": "movie tv show get all",
+                "description": "movie tv show get all",
+                "tags": ["Movie TV Show"],
+                "responses": {}
+            }
+        },
+        "/movie_tv_shows/{id}": {
+            "put": {
+                "summary": "movie tv show update",
+                "description": "movie tv show update",
+                "tags": [
+                    "Movie TV Show"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {},
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    { "in": "path", "name": "id" },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/MovieTvShow"
+                        }
+                    }
+                ]
+            },
+            "get": {
+                "summary": "movie tv show get one data",
+                "description": "movie tv show get one data",
+                "tags": [
+                    "Movie TV Show"
+                ],
+                "responses": {},
+                "parameters": [
+                    { "in": "path", "name": "id" }
+                ]
+            },
+            "delete": {
+                "summary": "movie tv show delete data",
+                "description": "movie tv show delete data",
+                "tags": [
+                    "Movie TV Show"
+                ],
+                "responses": {},
+                "security": [{ "bearerAuth": [] }],
+                "parameters": [
+                    { "in": "path", "name": "id" }
+                ]
+            }
+        }
+    },
+    "definitions": {
+        "SignUp": {
+            "type": "object",
+            "properties": {
+                "username": {
+                    "type": "string",
+                    "description": ""
+                },
+                "password": {
+                    "type": "string",
+                    "description": ""
+                }
+            }
+        },
+        "SignIn": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "username": {
+                    "type": "string",
+                    "description": ""
+                },
+                "password": {
+                    "type": "string",
+                    "description": ""
+                },
+                "isAdmin": {
+                    "type": "boolean",
+                    "description": ""
+                }
+            }
+        },
+        "MovieTvShow": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": ""
+                },
+                "description": {
+                    "type": "string",
+                    "description": ""
+                },
+                "subtitles": {
+                    "type": "string",
+                    "description": ""
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "MOVIE",
+                        "TV-SHOW"
+                    ],
+                    "description": ""
+                },
+                "starring": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": ""
+                },
+                "duration": {
+                    "type": "object",
+                    "properties": {
+                        "hours": {
+                            "type": "number",
+                            "description": ""
+                        },
+                        "minutes": {
+                            "type": "number",
+                            "description": ""
+                        },
+                        "seconds": {
+                            "type": "number",
+                            "description": ""
+                        }
+                    },
+                    "description": ""
+                },
+                "releaseDate": {
+                    "type": "string",
+                    "pattern": "([0-9]{4})-(?:[0-9]{2})-([0-9]{2})",
+                    "description": ""
+                },   
+                "directors": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": ""
+                },   
+                "producer": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": ""
+                }
+            }
+        }
+    }
+}
