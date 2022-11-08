@@ -5,7 +5,8 @@
 	"type": "commonjs",
 	"scripts": {
 		"start": "nodemon src/app.js",
-		"dotenv": "cp .env.example .env"
+		"dotenv": "cp .env.example .env",
+		"test": "jest --watchAll --verbose --coverage"
 	},
 	"repository": "git@github.com:sourabhossain/SS-BACKEND-TASK--SOURAB-HOSSAIN.git",
 	"author": "Sourab Hossain <sourab.asia@gmail.com>",
@@ -23,6 +24,7 @@
 		"swagger-ui-express": "^4.6.0"
 	},
 	"devDependencies": {
+		"jest": "^29.3.0",
 		"nodemon": "^2.0.20"
 	}
 }
