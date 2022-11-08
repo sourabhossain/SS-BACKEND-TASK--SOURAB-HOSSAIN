@@ -4,16 +4,16 @@ const authenticate = require("./../../middleware/authenticate");
 
 const movieTvShow = express.Router();
 
-movieTvShow.post("/movie_tv_show", authenticate, controller.createMovieTvShow);
+movieTvShow.post("/movie_tv_shows", authenticate, controller.createMovieTvShow);
 movieTvShow.get("/movie_tv_shows", controller.getMovieTvShows);
-movieTvShow.get("/movie_tv_show/:id", controller.getMovieTvShow);
+movieTvShow.get("/movie_tv_shows/:id", controller.getMovieTvShow);
 movieTvShow.put(
-	"/movie_tv_show/:id",
+	"/movie_tv_shows/:id",
 	authenticate,
 	controller.updateMovieTvShow
 );
 movieTvShow.delete(
-	"/movie_tv_show/:id",
+	"/movie_tv_shows/:id",
 	authenticate,
 	controller.deleteMovieTvShow
 );
